@@ -103,7 +103,7 @@
 
 -(void)dealloc{
     if (_taskManager) {
-        [_taskManager removeRunLoopTimer];
+        [_taskManager removeRunLoopObserver];
     }
    
 }

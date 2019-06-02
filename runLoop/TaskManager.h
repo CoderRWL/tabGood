@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(instancetype)initWithMaxTasks:(int)maxCount;
 -(void)addTask:(runLoopBlock)task;//添加耗时事物
--(void)removeRunLoopTimer;//销毁前必须调用，否则会销毁不了
+-(void)removeRunLoopObserver;//销毁前必须调用，否则会销毁不了
 
 
 @end

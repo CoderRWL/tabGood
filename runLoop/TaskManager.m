@@ -8,27 +8,18 @@
 
 #import "TaskManager.h"
 
-
-static NSTimeInterval _currentTime;
-
-@interface TaskManager ()
-@property(nonatomic,assign)BOOL isTimerWork;
-@end
-
+static CFRunLoopObserverRef runloopObserver;
 
 @implementation TaskManager
-{
-    NSTimer *_timer;
-}
+
 
 -(instancetype)initWithMaxTasks:(int)maxCount{
   
     self = [super init];
     if (self) {
-        
-        [self addRunloopTimer];
+    
+        [self addRunloopObserver];
         _maxTaskCountInQue= maxCount;
-        _isTimerWork = YES;
     
     }
     return self;
@@ -36,32 +27,39 @@ static NSTimeInterval _currentTime;
     
 }
 
--(void)setIsTimerWork:(BOOL)isTimerWork{
-    _isTimerWork = isTimerWork;
+
+-(void)addRunloopObserver{
+    CFRunLoopRef runloopRef = CFRunLoopGetCurrent();
+    CFRunLoopObserverContext contex = {
+        0,
+        (__bridge void *)self,
+        &CFRetain,
+        &CFRelease,
+        NULL
+    };
+    runloopObserver = CFRunLoopObserverCreate(NULL, kCFRunLoopBeforeWaiting, YES, 0, &callBack, &contex);
+    CFRunLoopAddObserver(runloopRef, runloopObserver, kCFRunLoopCommonModes);
+    CFRelease(runloopObserver);
     
-    if (_timer) {
-        if (_isTimerWork) {
-            _timer.fireDate = [NSDate distantPast];
-        }else{
-            _timer.fireDate = [NSDate distantFuture];
-        }
-    }
-   
 }
 
--(void)addRunloopTimer{
-    _timer = [NSTimer timerWithTimeInterval:0.01 target:self selector:@selector(task) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop]addTimer:_timer forMode:NSRunLoopCommonModes];
+void callBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info){
+    TaskManager *vc = (__bridge TaskManager*)info;
+    if (vc.tasks.count == 0) {
+        return;
+    }
+    runLoopBlock block = vc.tasks.firstObject;
+    block();
+    [vc.tasks removeObjectAtIndex:0];
     
 }
+
 
 -(void)addTask:(runLoopBlock)task{
     if (_tasks == nil) {
         _tasks = [NSMutableArray array];
     }
-    if (_isTimerWork == NO ) {
-        self.isTimerWork = YES;
-    }
+
     
     @synchronized (self) {
         
@@ -75,47 +73,8 @@ static NSTimeInterval _currentTime;
 }
 
 
--(void)task{
-    
-        if (_tasks.count== 0) {
-            if (_isTimerWork && isCompleteAllTask()) {
-                self.isTimerWork = NO;
-            }
-            return;
-        }
-    
-    [self excuceTaskWithIndex:0];
-    [self excuceTaskWithIndex:_tasks.count-1];
-    [self excuceTaskWithIndex:_tasks.count/2];
-    
-        
-    
-}
-
--(void)excuceTaskWithIndex:(NSInteger)index{
-    if (index < _tasks.count) {
-        runLoopBlock block = [_tasks objectAtIndex:index];
-        [_tasks removeObjectAtIndex:index];
-        block();
-    }
-    
-    if (_tasks.count== 0) {
-        _currentTime = [[NSDate date]timeIntervalSinceReferenceDate];
-    }
-}
-
-bool isCompleteAllTask(){
-    return ([[NSDate date]timeIntervalSinceReferenceDate] - _currentTime) > 10;
-}
-
-
-
--(void)removeRunLoopTimer{
-    if (_timer) {
-        [_timer invalidate];
-        _timer = nil;
-    }
-    
+-(void)removeRunLoopObserver{
+    CFRunLoopRemoveObserver(CFRunLoopGetCurrent(), runloopObserver, kCFRunLoopCommonModes);
 }
 -(void)dealloc{
 
