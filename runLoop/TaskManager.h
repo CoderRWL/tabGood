@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong)NSMutableArray *tasks;
 @property(nonatomic,assign)int maxTaskCountInQue;
-@property(nonatomic,assign)BOOL isTimerWork;
+
 
 
 -(instancetype)initWithMaxTasks:(int)maxCount;
