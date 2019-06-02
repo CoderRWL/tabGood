@@ -7,8 +7,19 @@
 //
 
 #import "cellModel.h"
+#import "tablePresent.h"
+
+
+
 
 @implementation cellModel
+
+//@synthesize title = _title;
+
+
+
+//不能同时重写set get ，除非使用@synthesize
+
 
 
 

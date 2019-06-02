@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		FBCE53C21F71721E008F5CF2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCE53C11F71721E008F5CF2 /* main.m */; };
 		FBCE53C51F71721E008F5CF2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCE53C41F71721E008F5CF2 /* AppDelegate.m */; };
-		FBCE53C81F71721E008F5CF2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCE53C71F71721E008F5CF2 /* ViewController.m */; };
 		FBCE53CB1F71721E008F5CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBCE53C91F71721E008F5CF2 /* Main.storyboard */; };
 		FBCE53CD1F71721E008F5CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCE53CC1F71721E008F5CF2 /* Assets.xcassets */; };
 		FBCE53D01F71721E008F5CF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBCE53CE1F71721E008F5CF2 /* LaunchScreen.storyboard */; };
-		FBD36DE622A25471001420FA /* TaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD36DE522A25471001420FA /* TaskManager.m */; };
-		FBD36DE922A25E30001420FA /* tableDelegateAndDataSourse.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD36DE822A25E30001420FA /* tableDelegateAndDataSourse.m */; };
-		FBD36DEC22A275A3001420FA /* cellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD36DEB22A275A3001420FA /* cellModel.m */; };
-		FBD36DEF22A282B4001420FA /* tablePresent.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD36DEE22A282B4001420FA /* tablePresent.m */; };
+		FBD36DFA22A2B621001420FA /* tableDelegateAndDataSourse.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD36DF122A2B620001420FA /* tableDelegateAndDataSourse.m */; };
+		FBD36DFB22A2B621001420FA /* cellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD36DF322A2B620001420FA /* cellModel.m */; };
+		FBD36DFC22A2B621001420FA /* lirwViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD36DF422A2B620001420FA /* lirwViewController.m */; };
+		FBD36DFD22A2B621001420FA /* TaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD36DF522A2B620001420FA /* TaskManager.m */; };
+		FBD36DFE22A2B621001420FA /* tablePresent.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD36DF922A2B621001420FA /* tablePresent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,20 +24,20 @@
 		FBCE53C11F71721E008F5CF2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBCE53C31F71721E008F5CF2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBCE53C41F71721E008F5CF2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FBCE53C61F71721E008F5CF2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FBCE53C71F71721E008F5CF2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FBCE53CA1F71721E008F5CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBCE53CC1F71721E008F5CF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBCE53CF1F71721E008F5CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBCE53D11F71721E008F5CF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBD36DE422A25471001420FA /* TaskManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskManager.h; sourceTree = "<group>"; };
-		FBD36DE522A25471001420FA /* TaskManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskManager.m; sourceTree = "<group>"; };
-		FBD36DE722A25E30001420FA /* tableDelegateAndDataSourse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tableDelegateAndDataSourse.h; sourceTree = "<group>"; };
-		FBD36DE822A25E30001420FA /* tableDelegateAndDataSourse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tableDelegateAndDataSourse.m; sourceTree = "<group>"; };
-		FBD36DEA22A275A3001420FA /* cellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cellModel.h; sourceTree = "<group>"; };
-		FBD36DEB22A275A3001420FA /* cellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cellModel.m; sourceTree = "<group>"; };
-		FBD36DED22A282B4001420FA /* tablePresent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tablePresent.h; sourceTree = "<group>"; };
-		FBD36DEE22A282B4001420FA /* tablePresent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tablePresent.m; sourceTree = "<group>"; };
+		FBD36DF022A2B620001420FA /* tableDelegateAndDataSourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tableDelegateAndDataSourse.h; sourceTree = "<group>"; };
+		FBD36DF122A2B620001420FA /* tableDelegateAndDataSourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tableDelegateAndDataSourse.m; sourceTree = "<group>"; };
+		FBD36DF222A2B620001420FA /* TaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskManager.h; sourceTree = "<group>"; };
+		FBD36DF322A2B620001420FA /* cellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cellModel.m; sourceTree = "<group>"; };
+		FBD36DF422A2B620001420FA /* lirwViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lirwViewController.m; sourceTree = "<group>"; };
+		FBD36DF522A2B620001420FA /* TaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskManager.m; sourceTree = "<group>"; };
+		FBD36DF622A2B620001420FA /* tablePresent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tablePresent.h; sourceTree = "<group>"; };
+		FBD36DF722A2B621001420FA /* cellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cellModel.h; sourceTree = "<group>"; };
+		FBD36DF822A2B621001420FA /* lirwViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lirwViewController.h; sourceTree = "<group>"; };
+		FBD36DF922A2B621001420FA /* tablePresent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tablePresent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,16 +72,16 @@
 			children = (
 				FBCE53C31F71721E008F5CF2 /* AppDelegate.h */,
 				FBCE53C41F71721E008F5CF2 /* AppDelegate.m */,
-				FBCE53C61F71721E008F5CF2 /* ViewController.h */,
-				FBCE53C71F71721E008F5CF2 /* ViewController.m */,
-				FBD36DE422A25471001420FA /* TaskManager.h */,
-				FBD36DE522A25471001420FA /* TaskManager.m */,
-				FBD36DE722A25E30001420FA /* tableDelegateAndDataSourse.h */,
-				FBD36DE822A25E30001420FA /* tableDelegateAndDataSourse.m */,
-				FBD36DED22A282B4001420FA /* tablePresent.h */,
-				FBD36DEE22A282B4001420FA /* tablePresent.m */,
-				FBD36DEA22A275A3001420FA /* cellModel.h */,
-				FBD36DEB22A275A3001420FA /* cellModel.m */,
+				FBD36DF822A2B621001420FA /* lirwViewController.h */,
+				FBD36DF422A2B620001420FA /* lirwViewController.m */,
+				FBD36DF222A2B620001420FA /* TaskManager.h */,
+				FBD36DF522A2B620001420FA /* TaskManager.m */,
+				FBD36DF022A2B620001420FA /* tableDelegateAndDataSourse.h */,
+				FBD36DF122A2B620001420FA /* tableDelegateAndDataSourse.m */,
+				FBD36DF622A2B620001420FA /* tablePresent.h */,
+				FBD36DF922A2B621001420FA /* tablePresent.m */,
+				FBD36DF722A2B621001420FA /* cellModel.h */,
+				FBD36DF322A2B620001420FA /* cellModel.m */,
 				FBCE53C91F71721E008F5CF2 /* Main.storyboard */,
 				FBCE53CC1F71721E008F5CF2 /* Assets.xcassets */,
 				FBCE53CE1F71721E008F5CF2 /* LaunchScreen.storyboard */,
@@ -170,13 +170,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBCE53C81F71721E008F5CF2 /* ViewController.m in Sources */,
-				FBD36DE922A25E30001420FA /* tableDelegateAndDataSourse.m in Sources */,
+				FBD36DFA22A2B621001420FA /* tableDelegateAndDataSourse.m in Sources */,
 				FBCE53C51F71721E008F5CF2 /* AppDelegate.m in Sources */,
-				FBD36DEC22A275A3001420FA /* cellModel.m in Sources */,
-				FBD36DEF22A282B4001420FA /* tablePresent.m in Sources */,
-				FBD36DE622A25471001420FA /* TaskManager.m in Sources */,
 				FBCE53C21F71721E008F5CF2 /* main.m in Sources */,
+				FBD36DFB22A2B621001420FA /* cellModel.m in Sources */,
+				FBD36DFE22A2B621001420FA /* tablePresent.m in Sources */,
+				FBD36DFD22A2B621001420FA /* TaskManager.m in Sources */,
+				FBD36DFC22A2B621001420FA /* lirwViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

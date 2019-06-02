@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface cellModel : NSObject
 
 @property(nonatomic,copy)NSString *title;
+@property(nonatomic,assign)int count;
 
 @end
 

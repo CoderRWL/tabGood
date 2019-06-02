@@ -47,6 +47,7 @@
         for (int i =0; i<100; i++) {
             cellModel *model = [[cellModel alloc]init];
             model.title = [NSString stringWithFormat:@"%d",arc4random_uniform(10)];
+            model.count = 100;
             [_dataArray addObject:model];
         }
         

@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)loadTable;
 -(void)loadCell:(NSIndexPath*)indexPath;
 
+
 @end
 
 @interface tablePresent : NSObject

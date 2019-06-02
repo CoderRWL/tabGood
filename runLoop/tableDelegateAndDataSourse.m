@@ -40,18 +40,23 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:_idelentifer];
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:_idelentifer];
+        cellModel *model = [self.present.dataArray objectAtIndex:indexPath.row];
+        if (self.cellConfigBlock) {
+            self.cellConfigBlock(cell, indexPath, model);
+        }
+    }else{
+        __weak typeof(self) weakself  =self;
+        [self.taskManager addTask:^{
+            cellModel *model = [weakself.present.dataArray objectAtIndex:indexPath.row];
+            if (weakself.cellConfigBlock) {
+                weakself.cellConfigBlock(cell, indexPath, model);
+            }
+        }];
+        
+       
     }
     
-    if (!_taskManager) {
-        _taskManager = [[TaskManager alloc]initWithMaxTasks:54];
-    }
-    __weak typeof(self) weakself  =self;
-    [_taskManager addTask:^{
-         cellModel *model = [weakself.present.dataArray objectAtIndex:indexPath.row];
-        if (weakself.cellConfigBlock) {
-            weakself.cellConfigBlock(cell, indexPath, model);
-        }
-    }];
+   
     
     return cell;
 }
@@ -76,11 +81,20 @@
     
 }
 
+-(TaskManager *)taskManager{
+    if (!_taskManager) {
+        _taskManager = [[TaskManager alloc]initWithMaxTasks:54];
+    }
+    return _taskManager;
+}
+
+#pragma mark - scrollViewDelegate
+
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (_scrollViewDidScrollBlock) {
         _scrollViewDidScrollBlock(scrollView);
     }
- 
+
 }
 
 
@@ -90,7 +104,6 @@
 -(void)dealloc{
     if (_taskManager) {
         [_taskManager removeRunLoopTimer];
-         _taskManager = nil;
     }
    
 }
